@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELEBRARE</title>
+    <!-- Cropper js stylesheet and script -->
+    <link rel="stylesheet" href="cropperjs/cropper.css">
+    <script src="cropperjs/cropper.js"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+</head>
+
+<body style="background-color:antiquewhite;">
+    <div class="c">
+        <h1 style="color: antiquewhite;">Celebrare</h1>
+    </div>
+
+    <div class="splash">
+        <h1 class="fade-in" style="text-align: center; font-family:serif; font-style: italic; color: rgb(95, 83, 17); margin-bottom: 0%;">Celebrare</h1>
+        <h6 class="fade-in" style="text-align: center; font-family:serif; color: rgb(95, 83, 17);margin-top: 0%;">Digital Innovations</h6>
+    </div>
+    <div class="a">
+        <h3 style="text-align: center;font-family:serif; font-weight: 100; color: rgb(95, 83, 17);">Add Image/Icon</h3>
+        <center>
+            <p class="bord" style=" padding: 10px; color: rgb(95, 83, 17); width: 90%; height: max-content;">Upload Image<br><br><br>
+                <input type="file" id="file" accept="image/jpeg, image/png, image/jpg" hidden>
+
+                <button class=select-image style="background-color: rgb(4, 142, 96); border-radius: 5px;">Choose from device</button>
+                <div style="display: flex; justify-content: center;">
+                    <div class="box-2 img-result hide">
+                        <img id="originalImage" class="cropped" src="" alt=""> 
+                        <div style="display: flex;flex-direction: column;align-items: center;gap: 0.5rem;">
+                            <button id="imageBtn" onclick="ImageOverlay('asset/user_image_frame_1.png')"><img id="shapeImage" src="asset/user_image_frame_1.png" width="100px" alt=""></button>
+                            <button id="imageBtn" onclick="ImageOverlay('asset/user_image_frame_2.png')"><img id="shapeImage" src="asset/user_image_frame_2.png" width="100px" alt=""></button>
+                            <button id="imageBtn" onclick="ImageOverlay('asset/user_image_frame_3.png')"><img id="shapeImage" src="asset/user_image_frame_3.png" width="100px" alt=""></button>
+                            <button id="imageBtn" onclick="ImageOverlay('asset/user_image_frame_4.png')"><img id="shapeImage" src="asset/user_image_frame_4.png" width="100px" alt=""></button>
+                        </div>
+                    </div>
+                    <div>
+                        <canvas id="resultCanvas" width="500px" height="300px"></canvas>
+                        <a href="" id="download" class="btn download hide">Download</a>
+                    </div>
+                </div>
+            </p>
+        </center>
+    </div>
+    
+    <div class="popup" >
+        <div id="imgContainer" >
+        </div>
+        <div class="box">
+            <div class="options hide">
+                <input type="hidden" class="img-w" value="300" min="100" max="1200" />
+            </div>
+            <button class="btn save hide">Save</button>
+            <button class="btn rotate" ><i class="fa fa-rotate-right"></i></button>
+            <button class="btn" id="horizontal" onclick="flipImage()"><i class='bx bx-reflect-vertical'></i></button>
+            
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
