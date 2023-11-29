@@ -59,6 +59,16 @@ rotateImage = document.querySelector('.rotate')
 
 inputFile.addEventListener('change', (e) => {
     popup.style.display = 'flex'
+      // Remove the old image if it exists
+      const oldImage = document.getElementById('uploadedImage');
+      if (oldImage) {
+          oldImage.parentNode.removeChild(oldImage);
+      }
+
+      // Destroy the old cropper instance if it exists
+      if (cropper) {
+          cropper.destroy();
+      }
     if (e.target.files.length) {
           // start file reader
       const reader = new FileReader();
